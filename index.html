@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories We Shared</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('bg.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 500px;
+            max-height: 500px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .memory {
+            display: none;
+            padding: 5px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.158);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            max-width: 200px;
+            max-height: 190px;
+            border-radius: 10px;
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 5px;
+            padding: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .buttons {
+        display: flex;
+        justify-content: center;
+            margin-top: 10px;
+        }
+        .buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.445);
+            backdrop-filter: blur(5px);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .buttons button:hover {
+            color: black;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        .music-icon {
+            position:absolute;
+            top: 80px;
+            
+            width: 40px;
+            height: 40px;
+            background: url('listening-to-music.png') no-repeat center center/cover;
+            animation: musicAnimation 1.5s infinite ease-in-out;
+        }
+        @keyframes musicAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+
+        }
+        .form-section {
+            flex: 1;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .memory-form {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        .memory-form input, .memory-form textarea, .memory-form button {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+        .plus-icon {
+            width: 40px;
+            height: 40px;
+            background: url('plus-icon.png') no-repeat center center/cover;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="LANA DEL REY - CHEMTRAILS OVER THE COUNTRY CLUB [INSTRUMENTAL].mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    
+    <div class="container">
+        <h1>Memories We Shared ❤️</h1>
+        
+        <div class="music-icon"></div>
+        
+        <div class="memory" id="memory0">
+            <h2>Our First Event Together 🌸</h2>
+            
+            <img src="IMG-20250213-WA0005.jpg" alt="First Date">
+            <p>Got to know you this day, got really inspired by you, seeing your passion hardwork and dedication for events.</p>
+        </div>
+        <div class="memory" id="memory1">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            
+            <img src="WhatsApp Image 2025-02-12 at 04.31.11_4f7f82e9.jpg" alt="First Date">
+            <p>FMFP day 1, Starting of our special bond</p>
+        </div>
+
+        <div class="memory" id="memory2">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="WhatsApp Image 2025-02-12 at 20.10.06_f49ed2a3.jpg" alt="Trip to the Mountains">
+            <p>Got to see your sweetest and caring side ✨ </p>
+        </div>
+        <div class="memory" id="memory3">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0012.jpg" alt="Trip to the Mountains">
+            <p>Cutest bubbly Asna</p>
+        </div>
+        <div class="memory" id="memory4">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0010.jpg" alt="Trip to the Mountains">
+            <p>FMFP Day 1 ending, spent the entire night thinking about how beautiful the day with you was.</p>
+        </div>
+        <div class="memory" id="memory5">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0006.jpg" alt="Trip to the Mountains">
+            <p>Watching you shine in the spotlight, admiring you sitting back.</p>
+        </div>
+        <div class="memory" id="memory6">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0009.jpg" alt="Trip to the Mountains">
+            <p>FMFP Day 2, best day of 2024, enjoyed really very much, but seeing you low was the worst feeling i've ever had, felt like crying.</p>
+        </div>
+        <div class="memory" id="memory7">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0011.jpg" alt="Trip to the Mountains">
+            <p>This candid is addictive for sure😭</p>
+        </div>
+        <div class="memory" id="memory8">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0013.jpg" alt="Trip to the Mountains">
+            <p>Starting of day 3,was worried about you because you had fever. Here, setting up to transfer data</p>
+        </div>
+        <div class="memory" id="memory9">
+            <h2>FMFP:2024 Best Days 🌸</h2>
+            <img src="IMG-20250213-WA0008.jpg" alt="Trip to the Mountains">
+            <p>End of the event, was feeling so devastated cz was going to miss all those beautiful moments and time we shared. was trying not to show that I was sad, but idk how, but you guessed it.</p>
+        </div>
+        <div class="memory" id="memory10">
+            <h2>HEHEHEHE</h2>
+            <img src="IMG-20250213-WA0007.jpg" alt="Trip to the Mountains">
+            <p>Discovered a new platform to chat on 😁😂.</p>
+        </div>
+        <div class="memory" id="memory11">
+            <h2>Food Festival🎆</h2>
+            <img src="WhatsApp Image 2025-02-13 at 01.34.01_f276c3e2.jpg" alt="Trip to the Mountains">
+            <p>A day well spent, bhot sara tasty food,desserts were the best, but har baar energy low karke sabka mood off karna is compulsory.</p>
+        </div>
+        <div class="memory" id="memory12">
+            <h2>Farewell✨</h2>
+            <img src="IMG-20250213-WA0003.jpg" alt="Trip to the Mountains">
+            <p>Itna sara discussion kara abt what to wear, saari dress ko reject kia, but these Jumkas uff uff🥺</p>
+        </div>
+        <div class="memory" id="memory13">
+            <h2>aCutie💕</h2>
+            <img src="IMG-20250213-WA0002.jpg" alt="Trip to the Mountains">
+            <p>cuteeee😭😭🥺🥺✨✨</p>
+        </div>
+        
+        <div id="valentine-message" class="hidden-message">
+            <h2>💌 Happy Valentine's Day! 💕</h2>
+            <p>You make my life magical every day! Looking forward to more amazing memories with you! 💖</p>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="changeMemory(-1)">⬅ Back</button>
+            <button onclick="changeMemory(1)">Next ➡</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentMemory = 0;
+        const memories = document.querySelectorAll('.memory');
+        const bgMusic = document.getElementById("bg-music");
+
+        function showMemory(index) {
+            memories.forEach(mem => mem.style.display = 'none');
+            memories[index].style.display = 'block';
+        }
+        
+        function changeMemory(direction) {
+            currentMemory += direction;
+            if (currentMemory < 0) currentMemory = memories.length - 1;
+            if (currentMemory >= memories.length) currentMemory = 0;
+            showMemory(currentMemory);
+        }
+
+        showMemory(currentMemory);
+        
+        const today = new Date();
+        if (today.getDate() === 14 && today.getMonth() === 1) { // February 14th
+            document.getElementById("valentine-message").style.display = "block";
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            bgMusic.play().catch(error => console.log("Autoplay blocked: User interaction required."));
+        });
+    </script>
+</body>
+</html>
