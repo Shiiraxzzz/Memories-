@@ -71,51 +71,8 @@
             color: black;
             background: rgba(255, 255, 255, 0.6);
         }
-/*         .music-icon {
-            position:absolute;
-            top: 50px;
-            
-            width: 40px;
-            height: 40px;
-            background: url('listening-to-music.png') no-repeat center center/cover;
-            animation: musicAnimation 1.5s infinite ease-in-out;
-        }
-        @keyframes musicAnimation {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-
-        } */
-        .form-section {
-            flex: 1;
-            padding-left: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .memory-form {
-            margin-top: 10px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-        }
-        .memory-form input, .memory-form textarea, .memory-form button {
-            margin: 5px 0;
-            padding: 8px;
-            border-radius: 5px;
-            border: none;
-        }
-        .plus-icon {
-            width: 40px;
-            height: 40px;
-            background: url('plus-icon.png') no-repeat center center/cover;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+      
+        
     </style>
 </head>
 <body>
@@ -241,6 +198,13 @@
         
         document.addEventListener("DOMContentLoaded", function() {
             bgMusic.play().catch(error => console.log("Autoplay blocked: User interaction required."));
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            function playMusic() {
+                bgMusic.play().catch(error => console.log("Autoplay blocked: User interaction required."));
+                document.removeEventListener("click", playMusic);
+            }
+            document.addEventListener("click", playMusic);
         });
     </script>
 </body>
